@@ -30,52 +30,16 @@ class DosenResource extends Resource
     //     return parent::getEloquentQuery()->where('id', auth('dosen')->id());
     // }
 
+    // public static function getBreadcrumb(): string
+    // {
+    //     '';
+    // }
+
     protected static ?string $navigationIcon = 'iconsax-bol-teacher';
 
-    public static function form(Form $form): Form
-    {
-        return $form
-            ->schema([
-                Section::make()
-                    ->schema([
-                        TextInput::make('nama')
-                            ->required(),
-                        TextInput::make('nidn')
-                            ->required()
-                            ->label('NIDN')
-                            ->numeric()
-                            ->length(10),
-                        TextInput::make('nip')
-                            ->label('NIP')
-                            ->numeric()
-                            ->length(18)
-                            ->required(),
-                        TextInput::make('pendidikan')
-                            ->required(),
-                        TextInput::make('pangkat')
-                            ->required(),
-                        Password::make('password')
-                            ->label('Password'),
-                    ])
-                    ->columns(2)
-            ]);
-    }
 
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                TextColumn::make('nama')
-            ])
-            ->paginated(false)
-            ->filters([
-                //
-            ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
-            ])
-            ->bulkActions([]);
-    }
+
+
 
     public static function getRelations(): array
     {

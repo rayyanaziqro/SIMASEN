@@ -20,10 +20,23 @@ class ProfileDosen extends Page implements HasForms
 
     public ?array $data = [];
 
+    protected static ?string $title = '';
+
     public function mount(): void
     {
         $this->form->fill(auth('dosen')->user()->attributesToArray());
     }
+
+    public function getBreadcrumbs(): array
+    {
+
+
+        return [
+
+        ];
+    }
+
+
 
     public function form(Form $form): Form
     {
@@ -48,8 +61,7 @@ class ProfileDosen extends Page implements HasForms
                             ->required(),
                         TextInput::make('pangkat')
                             ->required(),
-                        Password::make('password')
-                            ->label('Password'),
+                       
                     ])
                     ->columns(2)
 
