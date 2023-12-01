@@ -44,6 +44,10 @@ Akses ke halaman dosen
 ```bash
 localhost:8000/dosen
 ```
+Hubungkan public directory dengan storage
+```bash
+php artisan storage:link
+```
 
 
     
