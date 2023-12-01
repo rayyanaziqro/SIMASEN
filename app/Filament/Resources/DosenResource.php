@@ -58,7 +58,8 @@ class DosenResource extends Resource
                         TextInput::make('pangkat')
                             ->required(),
                         Password::make('password')
-                            ->label('Password'),
+                            ->label('Password')
+                            ->hiddenOn('edit'),
                     ])
                     ->columns(2)
             ]);

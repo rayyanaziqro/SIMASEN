@@ -61,7 +61,7 @@ class ProfileDosen extends Page implements HasForms
                             ->required(),
                         TextInput::make('pangkat')
                             ->required(),
-                       
+
                     ])
                     ->columns(2)
 
